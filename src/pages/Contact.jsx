@@ -10,7 +10,7 @@ export default function Contact(){
           <div style={{marginTop:18}}>
             <h4>Contact Details</h4>
             <p className="muted">Address: 123 Demo Street, Cityville, Country</p>
-            <p className="muted">Phone: +1 (555) 123-4567</p>
+            <p className="muted">Phone: 9342464996 </p>
             <p className="muted">Email: hello@example.com</p>
             <div style={{marginTop:12}}>
               <h4>Social</h4>
