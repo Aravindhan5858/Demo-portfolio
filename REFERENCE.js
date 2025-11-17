@@ -10,19 +10,23 @@
  */
 
 // HTML Usage:
+/*
 <certificate-card 
   title="Certificate Title"
   issuer="Issuing Organization"
   default-image="https://example.com/image.jpg">
 </certificate-card>
+*/
 
 // Internal State (per card):
+/*
 {
   imageUrl: string,
   isEditing: boolean,
   isLoading: boolean,
   hasError: boolean
 }
+*/
 
 // Event Flow:
 // 1. User clicks "Add Image URL" → sets isEditing=true, renders input
@@ -62,15 +66,20 @@ function CertificateCard({ title, issuer, defaultImage }) {
 // - Each card is a separate React fiber node
 
 
-// ============================================
-// SMOOTH SCROLLING IMPLEMENTATION
-// ============================================
-
 // CSS (native smooth scroll):
+/*
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed header */
+  scroll-padding-top: 80px;
 }
+*/
+// Example implementation (should be in CSS file):
+/*
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+*/
 
 // JavaScript enhancement:
 element.scrollIntoView({
@@ -118,6 +127,7 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
 
 // CSS for animation:
+/*
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -128,6 +138,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
   opacity: 1;
   transform: translateY(0);
 }
+*/
 
 
 // ============================================
@@ -139,24 +150,16 @@ const [theme, setTheme] = useState(() =>
   localStorage.getItem('theme') || 'dark'
 )
 
-useEffect(() => {
-  document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme)
-}, [theme])
-
-const toggleTheme = () => {
-  setTheme(prev => prev === 'dark' ? 'light' : 'dark')
-}
-
 // CSS:
-:root { /* dark theme vars */ }
-[data-theme="light"] { /* light theme vars */ }
-
-
+/*
+:root { dark theme vars }
+[data-theme="light"] { light theme vars }
+*/
 // ============================================
 // GLASSMORPHISM EFFECT
 // ============================================
 
+/*
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -164,127 +167,117 @@ const toggleTheme = () => {
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
+*/
 
 // Key properties:
-// - Semi-transparent background
-// - Subtle border for definition
-// - backdrop-filter: blur() for glass effect
-// - Shadow for depth
-
-
-// ============================================
-// GPU-ACCELERATED ANIMATIONS
-// ============================================
-
 // Good (uses compositor):
+/*
 .animate {
   transform: translateY(-8px);
   opacity: 0.8;
   transition: transform 0.3s, opacity 0.3s;
 }
+*/
 
 // Bad (causes reflow):
+/*
 .animate-bad {
-  top: -8px;  /* Triggers layout */
-  margin-top: -8px;  /* Triggers layout */
+  top: -8px;
+  margin-top: -8px;
 }
+*/
 
 // Use will-change sparingly:
+/*
 .hover-card:hover {
   will-change: transform;
   transform: translateY(-8px);
 }
-
-
-// ============================================
-// RESPONSIVE BREAKPOINTS
-// ============================================
-
-/* Mobile First Approach */
+*/
+/* Mobile First Approach
 .grid {
-  grid-template-columns: 1fr;  /* Mobile default */
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);  /* Tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);  /* Desktop */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Breakpoints used:
+Breakpoints used:
 - 480px: Small mobile adjustments
 - 768px: Tablet
 - 1024px: Desktop
-- 1400px: Max container width */
-
+- 1400px: Max container width
+*/
 
 // ============================================
 // ACCESSIBILITY FEATURES
 // ============================================
 
 // Skip link:
-<a href="#main" class="skip-link">Skip to main content</a>
-
-// ARIA labels:
-<button aria-label="Toggle theme">🌙</button>
-<input aria-label="Certificate image URL" />
 
 // Keyboard navigation:
+/*
 .skill-badge:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
+*/
 
 // Reduced motion:
+/*
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
+*/
 
-
-// ============================================
-// PERFORMANCE OPTIMIZATIONS
-// ============================================
-
+// Change accent colors:
+// <button aria-label="Toggle theme">🌙</button>
+// <input aria-label="Certificate image URL" />
 // 1. Lazy load images:
-<img loading="lazy" src="..." alt="..." />
+// <img loading="lazy" src="..." alt="..." />
 
 // 2. Use transform instead of positional properties
 // 3. Debounce scroll handlers
 // 4. Use IntersectionObserver instead of scroll events
 // 5. Minimize DOM queries (cache selectors)
 // 6. Use CSS containment:
+/*
 .card {
   contain: layout style paint;
 }
-
-
-// ============================================
-// COMMON CUSTOMIZATIONS
-// ============================================
+*/
 
 // Change accent colors:
+/*
 :root {
-  --accent-primary: #ff6b6b;  /* Your color */
-  --accent-secondary: #4ecdc4;  /* Your color */
+  --accent-primary: #ff6b6b;
+  --accent-secondary: #4ecdc4;
 }
+*/
 
 // Adjust animation speeds:
+/*
 :root {
   --transition-fast: 0.1s;
   --transition-base: 0.2s;
   --transition-slow: 0.4s;
 }
+*/
 
 // Change spacing scale:
+/*
 :root {
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -292,6 +285,44 @@ const toggleTheme = () => {
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
 }
+*/
+
+// Change accent colors:
+/*
+:root {
+  --accent-primary: #ff6b6b;
+  --accent-secondary: #4ecdc4;
+}
+*/
+
+// Adjust animation speeds:
+/*
+:root {
+  --transition-fast: 0.1s;
+  --transition-base: 0.2s;
+  --transition-slow: 0.4s;
+}
+*/
+
+// Change spacing scale:
+/*
+:root {
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+*/
+
+// Animation not triggering?
+/*
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    console.log('Element:', entry.target, 'Visible:', entry.isIntersecting)
+  })
+})
+*/
 
 // Add new section (React):
 // 1. Create component in src/pages/NewSection.jsx
@@ -305,21 +336,23 @@ const toggleTheme = () => {
 // ============================================
 
 // Certificate not updating?
-console.log('Current state:', { imageUrl, isEditing, hasError })
+// console.log('Current state:', { imageUrl, isEditing, hasError })
 
 // Theme not switching?
-console.log('Theme:', document.documentElement.getAttribute('data-theme'))
-console.log('LocalStorage:', localStorage.getItem('theme'))
+// console.log('Theme:', document.documentElement.getAttribute('data-theme'))
+// console.log('LocalStorage:', localStorage.getItem('theme'))
 
 // Scroll not smooth?
-console.log('Scroll behavior:', getComputedStyle(document.documentElement).scrollBehavior)
+// console.log('Scroll behavior:', getComputedStyle(document.documentElement).scrollBehavior)
 
 // Animation not triggering?
-const observer = new IntersectionObserver((entries) => {
+/*
+const debugObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     console.log('Element:', entry.target, 'Visible:', entry.isIntersecting)
   })
 })
+*/
 
 
 // ============================================

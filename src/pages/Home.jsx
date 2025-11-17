@@ -10,12 +10,11 @@ export default function Home(){
         <div className="hero-content">
           <p className="hero-greeting">Welcome to my portfolio</p>
           <h1 className="hero-title">
-            Hello, my<br/>name's <span className="text-gradient">Ben</span>.
+            Hello, my<br/>name's <span className="text-gradient">Aravindhan.C</span>
           </h1>
           <p className="hero-description">
-            I'm a visual designer from London.<br/>
-            Currently working with <span className="highlight">@Ideo</span> as<br/>
-            a UI Consultant.
+            Computer Science Engineering student building reliable, end-to-end solutions across web, software, and embedded systems.<br/>
+            Currently working with modern technologies and frameworks.
           </p>
           
           <div className="hero-cta">
@@ -37,8 +36,8 @@ export default function Home(){
         <div className="hero-image-container">
           <div className="hero-image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" 
-              alt="Ben - Visual Designer"
+              src="/profile.png" 
+              alt="Aravindhan.C - Computer Science Student"
               className="hero-profile-image"
             />
             <div className="floating-shape shape-1"></div>

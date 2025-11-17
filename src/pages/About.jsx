@@ -8,7 +8,7 @@ export default function About(){
           <div className="about-image-section">
             <div className="about-image-frame">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" 
+                src="/profile.png" 
                 alt="Profile" 
                 className="about-profile-image"
               />
@@ -18,15 +18,13 @@ export default function About(){
           <div className="about-text-section">
             <h2 className="about-heading">ABOUT ME</h2>
             <p className="about-description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type 
-              specimen book. It has survived not only five centuries, but also the leap into 
-              electronic typesetting, remaining essentially unchanged.
+            Built dynamic and interactive websites with HTML, CSS, JavaScript, and contemporary frameworks.
+Created intuitive and user-friendly user interfaces and maximized web performance for seamless user
+experience. Experienced in MS SQL, including database design, query optimization, and data
+administration.
             </p>
             
             <div className="about-actions">
-              <button className="btn btn-primary">HIRE ME</button>
               <a 
                 href="/cv.pdf" 
                 download="CV.pdf"
