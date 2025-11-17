@@ -36,7 +36,7 @@ export default function Home(){
         <div className="hero-image-container">
           <div className="hero-image-wrapper">
             <img 
-              src="/profile.png" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" 
               alt="Aravindhan.C - Computer Science Student"
               className="hero-profile-image"
             />
