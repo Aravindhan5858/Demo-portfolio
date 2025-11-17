@@ -2,44 +2,42 @@ import React from 'react'
 
 export default function About(){
   return (
-    <>
-      <h2>About Me</h2>
-      <div className="about-grid">
-        <div className="about-left">
-          <p className="about-bio">Hi, I'm Muzammal — a front-end developer who loves building accessible and performant web applications. I focus on clean UI, responsive designs, and smooth interactions.</p>
-          <div className="about-stats">
-            <div><strong>5+</strong><span>Years Experience</span></div>
-            <div><strong>200+</strong><span>Happy Clients</span></div>
-            <div><strong>50+</strong><span>Projects</span></div>
+    <div className="about-container">
+      <div className="about-card">
+        <div className="about-grid-layout">
+          <div className="about-image-section">
+            <div className="about-image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" 
+                alt="Profile" 
+                className="about-profile-image"
+              />
+            </div>
           </div>
-          <h3>Experience</h3>
-          <ul className="exp-list">
-            <li><strong>Senior Front-end Developer</strong> — Acme Corp (2022 - Present)</li>
-            <li><strong>Front-end Engineer</strong> — Creative Studio (2019 - 2022)</li>
-          </ul>
-        </div>
-        <div className="about-right">
-          <h3>Skills</h3>
-          <div className="skill-bar">
-            <label>HTML</label>
-            <div className="bar"><div className="active-bar" style={{width:'95%'}}></div></div>
+          
+          <div className="about-text-section">
+            <h2 className="about-heading">ABOUT ME</h2>
+            <p className="about-description">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+              when an unknown printer took a galley of type and scrambled it to make a type 
+              specimen book. It has survived not only five centuries, but also the leap into 
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+            
+            <div className="about-actions">
+              <button className="btn btn-primary">HIRE ME</button>
+              <a 
+                href="/cv.pdf" 
+                download="CV.pdf"
+                className="btn btn-outline"
+              >
+                DOWNLOAD CV
+              </a>
+            </div>
           </div>
-          <div className="skill-bar">
-            <label>CSS</label>
-            <div className="bar"><div className="active-bar" style={{width:'88%'}}></div></div>
-          </div>
-          <div className="skill-bar">
-            <label>JavaScript</label>
-            <div className="bar"><div className="active-bar" style={{width:'82%'}}></div></div>
-          </div>
-          <div className="skill-bar">
-            <label>Develop</label>
-            <div className="bar"><div className="active-bar" style={{width:'75%'}}></div></div>
-          </div>
-          <h3>Education</h3>
-          <p>Bachelor of Computer Science — University of Somewhere (2016 - 2020)</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
